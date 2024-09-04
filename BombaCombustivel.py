@@ -6,6 +6,7 @@ class Bomba_Combustivel:
 
     @property
     def valor_litro(self):
+<<<<<<< HEAD
         return self.__valor_litro
 
     @valor_litro.setter
@@ -22,6 +23,24 @@ class Bomba_Combustivel:
     
     def _validar_quantidade_disponivel(self, litros):
         if litros <= self.__quantidade_disponivel:
+=======
+        return self._valor_litro
+
+    @valor_litro.setter
+    def valor_litro(self, valor):
+        self._valor_litro = valor
+
+    @property
+    def quantidade_disponivel(self):
+        return self._quantidade_disponivel
+
+    @quantidade_disponivel.setter
+    def quantidade_disponivel(self, quantidade):
+        self._quantidade_disponivel = quantidade
+    
+    def _validar_quantidade_disponivel(self, litros):
+        if litros <= self._quantidade_disponivel:
+>>>>>>> b39b74fedb78d0639bde025399838c094e64fc7c
             return True
         else:
             return False
