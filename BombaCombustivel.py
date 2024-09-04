@@ -1,46 +1,46 @@
 class BombadeCombustivel:
     
-    def __init__(self, tipoCombustivel, valorLitro, quantidadeCombustivel):
-        self.tipoCombustivel = tipoCombustivel
-        self.valorLitro = valorLitro
-        self.quantidadeCombustivel = quantidadeCombustivel
+    def __init__(self, tipoCombustivel, valor_litro, quantidade_disponivel):
+        self.__tipoCombustivel = tipoCombustivel
+        self.__valor_litro = valor_litro
+        self.__quantidade_disponivel = quantidade_disponivel
         
-    def abastecerPorValor(self, valorAbastecer):
-        litros_abastecidos = valorAbastecer / self.valorLitro
+    def abastecer_por_valor(self, valor):
+        litros = valor / self.__valor_litro
         
-        if litros_abastecidos > self.quantidadeCombustivel:
+        if litros > self.__quantidade_disponivel:
             print("Quantidade insuficiente de combustivel na bomba.\n")
             return
         
-        self.quantidadeCombustivel -= litros_abastecidos
-        print(f"A quantidade abastecida de litros foi {litros_abastecidos} L\n")
+        self.__quantidade_disponivel -= litros
+        print(f"A quantidade abastecida de litros foi {litros} L\n")
         
-    def abastecerPorLitro(self, qtdLitros):
-        if qtdLitros > self.quantidadeCombustivel:
+    def abastecer_por_litro(self, litros):
+        if litros > self.__quantidade_disponivel:
             print("Quantidade insuficiente de combustivel na bomba.\n")
             return
         
-        valor_a_pagar = qtdLitros * self.valorLitro
-        self.quantidadeCombustivel -= qtdLitros
+        valor = litros * self.__valor_litro
+        self.__quantidade_disponivel -= litros
         
-        print(f"O valor a ser pago é R$ {valor_a_pagar}\n")
+        print(f"O valor a ser pago é R$ {valor}\n")
         
     def alterarValor(self, novo_preço):
-        self.valorLitro = novo_preço
+        self.__valor_litro = novo_preço
         print(f"O novo preço por litro é R$ {novo_preço}\n")
         
     def alterarCombustivel(self, tipo):
-        self.tipoCombustivel = tipo
-        print(f"Tipo de combustivel alterado para {self.tipoCombustivel}\n")
+        tipo = self.__tipoCombustivel 
+        print(f"Tipo de combustivel alterado para {tipo}\n")
         
-    def alterarQuantidadeCombustivel(self, nova_quantidade):
-        self.quantidadeCombustivel = nova_quantidade
-        print(f"A nova quantidade restante de litros é {self.quantidadeCombustivel} L\n")
+    def alterar_quantidade_disponivel(self, nova_quantidade):
+        nova_quantidade = self.__quantidade_disponivel
+        print(f"A nova quantidade restante de litros é {nova_quantidade} L\n")
 
 # Exemplo de uso
 bomba = BombadeCombustivel('gasolina', 4, 100)
-bomba.abastecerPorValor(20)
-bomba.abastecerPorLitro(10)
+bomba.abastecer_por_valor(20)
+bomba.abastecer_por_litro(10)
 bomba.alterarValor(6)
 bomba.alterarCombustivel('alcool')
-bomba.alterarQuantidadeCombustivel(150)
+bomba.alterar_quantidade_disponivel(150)
