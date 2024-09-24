@@ -1,4 +1,4 @@
-[] Uso de Herança (2 pontos);
+[*] Uso de Herança (2 pontos);
 - Classes que devem receber essa implementação:
 - [] BombaCombustivel
 - [] BombaEtanol
@@ -8,7 +8,7 @@
 
 [*] Uso dos nomes descritos no arquivo de registro (1 ponto);
 
-[] Uso de atributos encapsulados (1 ponto);
+[*] Uso de atributos encapsulados (1 ponto);
 
 [*] Calcular a quantidade de litros nas bombas (1 ponto);
 
